@@ -13,6 +13,7 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.22.0'
     implementation 'io.cucumber:cucumber-java:7.18.0'
     implementation 'io.cucumber:cucumber-junit:7.18.0'
+    implementation group: 'org.assertj', name: 'assertj-core', version: '3.26.0'
 }
 
 test {

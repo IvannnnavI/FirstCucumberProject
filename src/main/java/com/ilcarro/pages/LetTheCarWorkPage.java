@@ -1,5 +1,6 @@
 package com.ilcarro.pages;
 
+import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -104,8 +105,11 @@ WebElement confirmationMessage1;
 
 public LetTheCarWorkPage verifyConfirmationMessage(String title,String message) {
     pause(2000);
-    assert confirmationTitle.getText().contains(title);
-    assert confirmationMessage1.getText().contains(message);
+    SoftAssertions softAssertions = new SoftAssertions();
+    softAssertions.assertThat(confirmationTitle.getText()).contains(title);
+    softAssertions.assertThat(confirmationMessage1.getText()).contains(title);
+    softAssertions.assertAll();
+
     return this;
 }
 }
